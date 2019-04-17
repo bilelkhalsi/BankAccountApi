@@ -1,9 +1,11 @@
 package bank.domain;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Amount {
+    public static final Comparator<Amount> compareAmount = Comparator.comparingInt(Amount::getValue);
     private static final DecimalFormat decimalFormat = new DecimalFormat("#.00");
 
     private int value;

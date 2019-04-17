@@ -12,7 +12,7 @@ public interface Account {
      * Withdrawal an amount from the account.
      * @param amount amount
      */
-    void withdrawal(Amount amount);
+    void withdrawal(Amount amount) throws AmountNotAvailable;
 
     /**
      * Return a report of executed statements.

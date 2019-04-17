@@ -20,11 +20,11 @@ class AccountTest {
         assertEquals(sut.currentBalance().getValue(), 500);
     }
 
-
     @Test
-    void should_retrieve_money_from_the_account() {
+    void should_retrieve_money_from_the_account() throws AmountNotAvailable {
+        sut.deposit(new Amount(500));
         sut.withdrawal(new Amount(500));
-        assertEquals(sut.currentBalance().getValue(), -500);
+        assertEquals(sut.currentBalance().getValue(), 0);
     }
 
 
