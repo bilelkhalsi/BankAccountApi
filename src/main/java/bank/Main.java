@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) {
         Account account = new AccountImpl();
         account.deposit(new Amount(1000));
-        account.deposit(new Amount(2000));
+        account.withdrawal(new Amount(2000));
+        System.out.println(account.report());
 
     }
 }

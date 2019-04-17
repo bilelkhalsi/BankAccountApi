@@ -23,8 +23,9 @@ public class Transaction {
     @Override
     public String toString() {
         return String.join(" | ",
-                Strings.padEnd(date.toString(), 15, ' '),
-                Strings.padEnd(value.toString(), 15, ' ')
+            Strings.padEnd(date.toString(), 15, ' '),
+            Strings.padEnd(value.getValue() < 0 ? value.toString():  " ", 15, ' '),
+            Strings.padEnd(value.getValue() >= 0 ? value.toString() : " ", 15, ' ')
         );
     }
 
@@ -34,7 +35,7 @@ public class Transaction {
             return false;
         }
         return Objects.equals(date, ((Transaction) obj).date)
-                && Objects.equals(value, ((Transaction) obj).value);
+            && Objects.equals(value, ((Transaction) obj).value);
     }
 
 

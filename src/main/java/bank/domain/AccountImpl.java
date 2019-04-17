@@ -29,6 +29,11 @@ public class AccountImpl implements Account {
 
 
     @Override
+    public String report() {
+        return statement.toString();
+    }
+
+    @Override
     public Amount currentBalance() {
         return balance;
     }

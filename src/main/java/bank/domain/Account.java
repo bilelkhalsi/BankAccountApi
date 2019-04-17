@@ -15,6 +15,13 @@ public interface Account {
     void withdrawal(Amount amount);
 
     /**
+     * Return a report of executed statements.
+     * @return report.
+     */
+    String report();
+
+
+    /**
      * Return account balance.
      * @return balance.
      */
