@@ -19,6 +19,15 @@ public class AccountImpl implements Account {
         statement.addStatementLine(transaction, this.balance);
     }
 
+
+    @Override
+    public void withdrawal(Amount value) {
+        Transaction transaction = new Transaction(value.negative(), LocalDate.now());
+        this.balance = transaction.executeTransaction(balance);
+        statement.addStatementLine(transaction, this.balance);
+    }
+
+
     @Override
     public Amount currentBalance() {
         return balance;

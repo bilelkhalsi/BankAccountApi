@@ -9,6 +9,12 @@ public interface Account {
     void deposit(Amount amount);
 
     /**
+     * Withdrawal an amount from the account.
+     * @param amount amount
+     */
+    void withdrawal(Amount amount);
+
+    /**
      * Return account balance.
      * @return balance.
      */

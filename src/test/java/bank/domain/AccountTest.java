@@ -21,4 +21,11 @@ class AccountTest {
     }
 
 
+    @Test
+    void should_retrieve_money_from_the_account() {
+        sut.withdrawal(new Amount(500));
+        assertEquals(sut.currentBalance().getValue(), -500);
+    }
+
+
 }
